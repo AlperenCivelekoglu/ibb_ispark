@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parking Spots</title>
+</head>
+<body>
+    <h1>Parking Spots</h1>
+    <ul>
+        {% for spot in spots %}
+            <li>{{ spot.park_name }} - {{ spot.location_name }} - {{ spot.capacity_of_park }} spots</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
