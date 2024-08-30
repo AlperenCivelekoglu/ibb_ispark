@@ -20,3 +20,16 @@ class ParkingSpotListCreateAPIView(generics.CreateAPIView):
         parking_spots = ParkingSpot.objects.all()
         serializer = ParkingSpotSerializer(parking_spots, many=True)
         return Response(serializer.data)
+    
+class ParkingSpotDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ParkingSpot.objects.all()
+    serializer_class = ParkingSpotSerializer
+
+    def get_object(self, pk):
+        parking_spot_instance = get_object_or_404(ParkingSpot, pk=pk)
+        return parking_spot_instance
+    
+    def get(self, request, pk):
+        parking_spot = self.get_object(pk=pk)
+        serializer = ParkingSpotSerializer(parking_spot)
+        return Response(serializer.data)

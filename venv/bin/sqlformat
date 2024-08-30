@@ -1,4 +1,4 @@
-#!/home/birfenberkepc/deneme_ws/ibb_ispark/venv/bin/python3
+#!/home/alperen/deneme_ws/ibb_ispark/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    'rest_framework_gis',
     "django_extensions",
     "parkapp.apps.ParkappConfig",
     'django.contrib.gis',
+    'import_export',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +54,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+     'corsheaders.middleware.CorsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # React frontend' in adresi
 ]
 
 ROOT_URLCONF = "ispark_project.urls"
