@@ -1,8 +1,6 @@
 ackermann-msgs==2.0.2
 action-msgs==1.2.1
 ament-black==0.2.5
-ament-clang-format==0.12.11
-ament-clang-tidy==0.12.11
 ament-cmake-test==1.3.10
 ament-copyright==0.12.11
 ament-index-python==1.4.0

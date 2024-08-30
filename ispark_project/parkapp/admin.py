@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import ParkingSpot
+from parkapp.models import ParkingSpot
 
 admin.site.register(ParkingSpot)

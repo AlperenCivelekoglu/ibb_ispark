@@ -10,8 +10,8 @@ class ParkingSpot(geomodels.Model):
     capacity_of_park = models.IntegerField()
     working_time = models.CharField(max_length=255)
     county_name = models.CharField(max_length=255)
-    longitude = models.FloatField()
-    latitude = models.FloatField()
+    LONGITUDE = models.FloatField()
+    LATITUDE = models.FloatField()
     geom = geomodels.PointField(null=True, blank=True)
 
 

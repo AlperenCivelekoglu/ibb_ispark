@@ -77,22 +77,22 @@ WSGI_APPLICATION = "ispark_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#         'NAME': 'alperen_db',
-#         'USER': 'postgres',
-#         'PASSWORD': 'yourpassword',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'mydatabase',
+        'USER': 'postgres',  # Kullanıcı adını burada 'postgres' olarak belirleyin
+        'PASSWORD': 'Alperen2024*',  # Kullanıcı parolasını burada girin
+        'HOST': 'localhost',
+        'PORT': '5432',  # PostgreSQL varsayılan portu
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

@@ -1,7 +1,15 @@
+import os
+import sys
 import pandas as pd
-from sqlalchemy import create_engine
-from django.conf import settings
+from sqlalchemy import create_engine, text
 import django
+from django.conf import settings
+
+# Django proje dizinini PYTHONPATH'a ekleyin
+sys.path.append('/home/alperen/deneme_ws/ibb_ispark/ispark_project')
+
+# Django ayarlarının bulunduğu modülü belirleme
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ispark_project.settings')
 
 # Django projesinin ayarlarını yükleyin
 django.setup()
@@ -29,5 +37,27 @@ df = df.rename(columns={
     'geom': 'geom'
 })
 
+# Tabloyu kontrol etme ve oluşturma
+with engine.connect() as conn:
+    result = conn.execute(text("SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name='parkapp_parkingspot')"))
+    table_exists = result.scalar()
+
+    if not table_exists:
+        # Tabloyu oluşturma SQL komutu
+        create_table_sql = """
+        CREATE TABLE parkapp_parkingspot (
+            id SERIAL PRIMARY KEY,
+            park_name VARCHAR,
+            location_name VARCHAR,
+            park_type_id VARCHAR,
+            park_type_desc VARCHAR,
+            capacity_of_park INTEGER,
+            working_time VARCHAR,
+            county_name VARCHAR,
+            geom GEOMETRY(Point, 4326)
+        );
+        """
+        conn.execute(text(create_table_sql))
+
 # Veriyi PostgreSQL veritabanına yazma
-df.to_sql('parkingspot', engine, if_exists='append', index=False)
+df.to_sql('parkapp_parkingspot', engine, if_exists='append', index=False)
