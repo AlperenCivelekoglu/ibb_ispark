@@ -1,26 +1,27 @@
+/* src/components/MapCmponenet.css */
 .map-container-wrapper {
     position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px auto;
-}
-
-.search-bar {
-position: absolute;
-top: 20px; /* Haritanın üstünden ne kadar uzaklıkta olacağı */
-left: 50%;
-transform: translateX(-50%);
-padding: 10px;
-width: 90%;
-max-width: 400px;
-border: 1px solid #ccc;
-border-radius: 4px;
-background-color: white;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-z-index: 1000; /* Arama çubuğunu haritanın üstünde görünmesini sağlar */
+    width: 90%; /* Genişliği ekranın %90'ı olarak ayarlıyoruz */
+    margin: 2% auto; /* Üst-alt boşluklar yüzdesel olarak ayarlandı */
 }
 
 .map-container {
-height: 60vh; /* Harita yüksekliği */
+    height: 60%; /* Haritanın yüksekliği ekranın %60'ı olarak ayarlandı */
+    width: 100%; /* Haritanın genişliği parent container'ın %100'ü olacak şekilde ayarlandı */
 }
-  
+
+@media screen and (max-width: 768px) {
+    .map-container {
+        height: 50%; /* Haritanın yüksekliği ekranın %50'si olarak ayarlandı */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .map-container-wrapper {
+        width: 95%; /* Genişliği ekranın %95'i olarak ayarlandı */
+    }
+
+    .map-container {
+        height: 50%; /* Haritanın yüksekliği ekranın %50'si olarak ayarlandı */
+    }
+}

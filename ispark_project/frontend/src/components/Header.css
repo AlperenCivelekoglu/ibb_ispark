@@ -1,11 +1,66 @@
+/* Header stilleri */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 0 2%; /* İç boşluklar yatayda ayarlanıyor */
+  display: flex;
+  align-items: center; /* Görsel ve başlık merkezde hizalanır */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: 10vh; /* Header yüksekliği ekran yüksekliğinin %10'u olarak ayarlanır */
+  min-height: 60px; /* Header'ın minimum yüksekliğini ayarlıyoruz */
+  box-sizing: border-box; /* Padding ve border'ları genişlik ve yüksekliğe dahil eder */
+}
+
+.header img {
+  height: 100%; /* Görselin yüksekliği header'ın yüksekliğine eşit olacak şekilde ayarlanır */
+  margin-right: 1%; /* Görsel ile başlık arasına boşluk eklenir */
+}
+
+.header h1 {
+  font-size: 1.5rem; /* Başlık boyutu */
+  color: #333;
+  margin: 0;
+  white-space: nowrap; /* Başlığın satır kaydırmasını engeller */
+  overflow: hidden; /* Uzun başlıkların taşmasını engeller */
+  text-overflow: ellipsis; /* Taşan başlıklar için üç nokta gösterir */
+}
+
+/* Küçük ekranlar için (tabletler) */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1.5%; /* İç boşlukları küçültüyoruz */
+    height: 8vh; /* Daha küçük ekranlar için header yüksekliğini küçültüyoruz */
+    min-height: 50px; /* Header'ın minimum yüksekliğini ayarlıyoruz */
   }
+
+  .header img {
+    height: 100%; /* Görselin yüksekliği yine header'ın yüksekliğine eşit olacak şekilde ayarlanır */
+    margin-right: 1%; /* Boşluk aynı kalır */
+  }
+
+  .header h1 {
+    font-size: 1.2rem; /* Başlık boyutunu küçültüyoruz */
+  }
+}
+
+/* Daha küçük ekranlar için (telefonlar) */
+@media (max-width: 480px) {
+  .header {
+    padding: 0 1%; /* İç boşlukları daha da küçültüyoruz */
+    height: 6vh; /* Daha küçük ekranlar için header yüksekliğini daha da küçültüyoruz */
+    min-height: 40px; /* Header'ın minimum yüksekliğini ayarlıyoruz */
+  }
+
+  .header img {
+    height: 100%; /* Görselin yüksekliği yine header'ın yüksekliğine eşit olacak şekilde ayarlanır */
+    margin-right: 1%; /* Boşluk aynı kalır */
+  }
+
+  .header h1 {
+    font-size: 1rem; /* Başlık boyutunu daha da küçültüyoruz */
+  }
+}
