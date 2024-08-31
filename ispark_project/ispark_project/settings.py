@@ -59,6 +59,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React frontend' in adresi
+    "http://172.20.10.2:3000",
 ]
 
 ROOT_URLCONF = "ispark_project.urls"

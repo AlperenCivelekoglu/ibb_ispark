@@ -74,3 +74,38 @@
   font-size: 1.2rem;
   box-shadow: 0 0 0px 5px #fff;
 }
+
+/* App.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Tüm sayfayı kaplayan bir container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+
+/* Küçük ekranlar için (mobil cihazlar) */
+@media (max-width: 600px) {
+  .map-container {
+    width: 100%;  /* Ekranın tamamını kaplar */
+    height: 50vh; /* Yükseklik ekranın %50'si */
+  }
+}
+
+/* Daha büyük ekranlar için (tablet, masaüstü) */
+@media (min-width: 601px) {
+  .map-container {
+    width: 90%;
+    height: 60vh;
+  }
+}
