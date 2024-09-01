@@ -1,6 +1,6 @@
 // src/components/SearchBar.js
 import React from "react";
-import "./SearchBar.css";
+import "../css/SearchBar.css";
 
 const SearchBar = ({ searchTerm, handleSearch }) => {
   return (

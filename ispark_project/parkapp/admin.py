@@ -3,12 +3,12 @@ from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from parkapp.models import ParkingSpot
 
-# Import/Export için resource sınıfı oluşturun
+
 class ParkingSpotResource(resources.ModelResource):
     class Meta:
         model = ParkingSpot
 
-# Admin sınıfını ImportExportModelAdmin ile tanımlayın
+
 @admin.register(ParkingSpot)
 class ParkingSpotAdmin(ImportExportModelAdmin):
     resource_class = ParkingSpotResource

@@ -1,0 +1,33 @@
+.map-container-wrapper {
+    position: relative;
+    width: 90%; 
+    margin: 2% auto;
+  }
+  
+  .map-container {
+    height: 100%; 
+    width: 100%;
+  }
+  
+  /* Küçük ekranlar için (mobil cihazlar) */
+  @media screen and (max-width: 768px) {
+    .map-container-wrapper {
+      height: calc(50vh - 50px); 
+    }
+  
+    .map-container {
+      height: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .map-container-wrapper {
+      width: 95%; 
+      height: calc(50vh - 40px); 
+    }
+  
+    .map-container {
+      height: 100%;
+    }
+  }
+  

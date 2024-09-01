@@ -4,9 +4,9 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import MarkerCluster from "./MarkerCluster";
-import SearchBar from "./SearchBar"; // Yeni bileşeni buradan import edin
+import SearchBar from "./SearchBar";
 import "leaflet/dist/leaflet.css";
-import "./MapComponent.css";
+import "../css/MapComponent.css";
 
 const MapComponent = () => {
   const [markers, setMarkers] = useState([]);
@@ -41,7 +41,7 @@ const MapComponent = () => {
 
   return (
     <div className="map-container-wrapper">
-      <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} /> {/* Yeni bileşeni burada kullanın */}
+      <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} /> {}
       <div className="map-container">
         <MapContainer center={[41.05566, 28.9922]} zoom={13} style={{ height: "100%", width: "100%" }}>
           <TileLayer

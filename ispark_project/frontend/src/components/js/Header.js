@@ -1,7 +1,7 @@
 // src/components/Header.js
 import React from "react";
-import "./Header.css";
-import logo from "../png/ibb-logo-tr.png"; // Görsel yolunu buraya ekleyin
+import "../css/Header.css";
+import logo from "../../png/ibb-logo-tr.png"; // Görsel yolunu buraya ekleyin
 
 const Header = () => {
   return (

@@ -1,0 +1,25 @@
+.search-bar {
+    position: relative;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    width: 25%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+@media screen and (max-width: 768px) {
+    .search-bar {
+        width: 80%;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-bar {
+        width: 80%;
+        padding: 1rem;
+    }
+}
